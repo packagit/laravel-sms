@@ -1,17 +1,5 @@
 # Laravel Sms
 
-Laravel 贴合实际需求同时满足多种通道的短信发送组件
-
-[![Build Status](https://travis-ci.org/guojiangclub/laravel-sms.svg?branch=master)](https://travis-ci.org/guojiangclub/laravel-sms)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/badges/build.png?b=master)](https://scrutinizer-ci.com/g/guojiangclub/laravel-sms/build-status/master)
-[![Latest Stable Version](https://poser.pugx.org/ibrand/laravel-sms/v/stable)](https://packagist.org/packages/ibrand/laravel-sms)
-[![Latest Unstable Version](https://poser.pugx.org/ibrand/laravel-sms/v/unstable)](https://packagist.org/packages/ibrand/laravel-sms)
-[![License](https://poser.pugx.org/ibrand/laravel-sms/license)](https://packagist.org/packages/ibrand/laravel-sms)
-
-## Featrue
-
 基于业务需求在 [overtrue/easy-sms][1] 基础进行扩展开发，主要实现如下目标：
 
 1. 支持短信验证码直接在 config 中配置模板ID
@@ -31,7 +19,7 @@ Laravel 贴合实际需求同时满足多种通道的短信发送组件
 ## 安装
 
 ```php
-composer require ibrand/laravel-sms:~1.0 -vvv
+composer require packagit/laravel-sms:~1.0 -vvv
 ```
 
 低于 Laravel5.5 版本
@@ -237,36 +225,21 @@ if (!Sms::checkCode(\request('mobile'), \request('code'))) {
 'dblog' => true,
 ```
 
+### APP审核相关配置
+
+APP 审核期间，一般要求提供可供审核用的账号和密码，所以新增审核时使用的手机号，和验证码。仅当 `JUST_APP_CHECK = 1` 时有效，审核过后，可以关闭 (`JUST_APP_CHECK = 0`)
+
+```
+JUST_APP_CHECK=1
+SMS_CHECK_PASS_MOBILE=13011110000
+SMS_CHECK_PASS_CODE=54321
+```
 
 ### Resources
 1. [overtrue/easy-sms][1]
 2. [toplan/laravel-sms][2]
+3. [ibrand/laravel-sms][2]
 
   [1]: https://github.com/overtrue/easy-sms/
   [2]: https://github.com/toplan/laravel-sms/
-
-## 果酱云社区
-
-<p align="center">
-  <a href="https://guojiang.club/" target="_blank">
-    <img src="https://cdn.guojiang.club/image/2022/02/16/wu_1fs0jbco2182g280l1vagm7be6.png" alt="点击跳转"/>
-  </a>
-</p>
-
-
-
-- 全网真正免费的IT课程平台
-
-- 专注于综合IT技术的在线课程，致力于打造优质、高效的IT在线教育平台
-
-- 课程方向包含Python、Java、前端、大数据、数据分析、人工智能等热门IT课程
-
-- 300+免费课程任你选择
-
-
-
-<p align="center">
-  <a href="https://guojiang.club/" target="_blank">
-    <img src="https://cdn.guojiang.club/image/2022/02/16/wu_1fs0l82ae1pq11e431j6n17js1vq76.png" alt="点击跳转"/>
-  </a>
-</p>
+  [3]: https://github.com/ibrand/laravel-sms/

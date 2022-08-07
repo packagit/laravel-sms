@@ -1,9 +1,9 @@
 {
-	"name": "ibrand/laravel-sms",
+	"name": "packagit/laravel-sms",
 	"type": "library",
-	"description": "ibrand laravel sms base overtrue's easy-sms",
+	"description": "laravel sms package",
 	"keywords": [
-		"ibrand",
+		"packagit",
 		"laravel sms"
 	],
 	"license": "MIT",

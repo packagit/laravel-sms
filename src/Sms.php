@@ -249,6 +249,13 @@ class Sms
 	 */
 	public function checkCode($to, $inputCode)
 	{
+		// APP 审核时用
+		$passMobile = config('ibrand.sms.check_pass.mobile');
+		$passCode = config('ibrand.sms.check_pass.code');
+		if ((int)config('auth.app_check') === 1 && $to && $inputCode && $to === $passMobile && $inputCode === $passCode) {
+			return true;
+		}
+
 		if (config('app.debug')) {
 			return true;
 		}
